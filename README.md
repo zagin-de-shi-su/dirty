@@ -1,58 +1,24 @@
-# dirty
+# README
 
-# Entity Relationship Diagram
-```mermaid
-erDiagram
-  Users {
-    int id PK
-    varchar name
-    varchar email
-    varchar password_digest
-    varchar profile_text
-  }
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-  Recipes {
-    int id PK
-    int user_id FK
-    varchar title
-    varchar material
-    varchar overview
-    varchar process
-  }
+Things you may want to cover:
 
-  Tags {
-    int id PK
-    varchar name
-  }
+* Ruby version
 
-  TagRelations {
-    int id PK
-    int recipe_id FK
-    int tag_id FK
-  }
+* System dependencies
 
-  Reviews {
-    int id PK
-    int user_id FK
-    int recipe_id FK
-    text comment
-    int score
-  }
+* Configuration
 
-  ReviewLikes {
-    int user_id PK, FK
-    int review_id PK, FK
-  }
+* Database creation
 
-  %% 関連性定義
-  Users ||--o{ Recipes : has
-  Users ||--o{ Reviews : writes
-  Users ||--o{ ReviewLikes : likes
+* Database initialization
 
-  Recipes ||--o{ Reviews : has
-  Recipes ||--o{ TagRelations : tags
+* How to run the test suite
 
-  Tags ||--o{ TagRelations : used_in
+* Services (job queues, cache servers, search engines, etc.)
 
-  Reviews ||--o{ ReviewLikes : has
-```
+* Deployment instructions
+
+* ...
